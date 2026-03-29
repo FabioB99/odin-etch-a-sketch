@@ -9,12 +9,37 @@ function createSquare(divNumber) {
     container.appendChild(square);
 }
 
-// Add squares
-for (let i = 0; i < 256; i++) {
-    let counter = i + 1;
-    createSquare(counter);
+function createGrid(sideLength) {
+    let numberOfSquares = sideLength * sideLength;
+    for (let i = 0; i < numberOfSquares; i++) {
+        let counter = i + 1;
+        createSquare(counter);
+    }
 }
 
+// Create first grid
+for (let i = 0; i < 256; i++) {
+        let counter = i + 1;
+        createSquare(counter);
+}
+
+// Generate new grid button
+
+const button = document.querySelector(".btn");
+button.addEventListener("click", (e) => {
+
+    const container = document.querySelector(".container");
+    console.log(container);
+
+    // Remove current grid
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+
+    const numberOfSquares = prompt("Please enter the number of squares per side:");
+    createGrid(numberOfSquares);
+
+})
 
 // Hover effect
 const squares = document.querySelectorAll(".square");
@@ -31,17 +56,3 @@ squares.forEach((square) => {
     });
 
 });
-
-// Generate new grid button
-
-const button = document.querySelector(".btn");
-button.addEventListener("click", (e) => {
-    
-    const container = document.querySelector(".container");
-    console.log(container);
-
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
-    }
-    
-})
