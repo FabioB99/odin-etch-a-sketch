@@ -17,14 +17,29 @@ function createGrid(sideLength) {
     }
 }
 
-// Create first grid
-for (let i = 0; i < 256; i++) {
-        let counter = i + 1;
-        createSquare(counter);
+function addHoverEffect() {
+    const squares = document.querySelectorAll(".square");
+
+    squares.forEach((square) => {
+        square.addEventListener("mouseover", (e) => {
+            // console.log(e.target.textContent);
+            e.target.classList.toggle("hover-effect");
+        });
+
+        square.addEventListener("mouseout", (e) => {
+            // console.log(e.target.textContent);
+            e.target.classList.toggle("hover-effect");
+        });
+
+    });
 }
 
-// Generate new grid button
+// Create first grid
+createGrid(16);
+addHoverEffect();
 
+
+// Generate new grid button
 const button = document.querySelector(".btn");
 button.addEventListener("click", (e) => {
 
@@ -38,21 +53,6 @@ button.addEventListener("click", (e) => {
 
     const numberOfSquares = prompt("Please enter the number of squares per side:");
     createGrid(numberOfSquares);
+    addHoverEffect();
 
 })
-
-// Hover effect
-const squares = document.querySelectorAll(".square");
-
-squares.forEach((square) => {
-    square.addEventListener("mouseover", (e) => {
-        // console.log(e.target.textContent);
-        e.target.classList.toggle("hover-effect");
-    });
-
-    square.addEventListener("mouseout", (e) => {
-        // console.log(e.target.textContent);
-        e.target.classList.toggle("hover-effect");
-    });
-
-});
