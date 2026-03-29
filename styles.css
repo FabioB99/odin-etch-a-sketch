@@ -27,6 +27,23 @@ body {
     align-items: start;
 }
 
+/* Add button styling here*/
+.btn {
+    font-size: 18px;
+    font-weight: bold;
+    width: auto ;
+    height: auto;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+    color: #2B2B2B;
+    border: none;
+    outline: 1px solid #2B2B2B;
+    
+}
+
+
+
 .container {
     padding: 32px;
     display: flex;
