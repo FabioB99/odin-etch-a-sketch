@@ -29,11 +29,6 @@ function addHoverEffect() {
         square.addEventListener("mouseover", (e) => {
             e.target.classList.add("hover-effect");
         });
-
-        //square.addEventListener("mouseout", (e) => {
-        //    e.target.classList.toggle("hover-effect");
-        //});
-
     });
 }
 
@@ -59,7 +54,6 @@ const button = document.querySelector(".btn");
 button.addEventListener("click", (e) => {
 
     const container = document.querySelector(".container");
-    console.log(container);
 
     // Remove current grid
     while (container.firstChild) {
@@ -70,3 +64,11 @@ button.addEventListener("click", (e) => {
     addHoverEffect();
 
 })
+
+// Clear button even handling
+const clearButton = document.querySelector(".clear");
+clearButton.addEventListener("click", (e) => {
+    const squares = document.querySelectorAll(".square");
+    squares.forEach((square) => square.classList.remove("hover-effect"));
+})
+

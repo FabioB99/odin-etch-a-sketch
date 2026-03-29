@@ -29,8 +29,7 @@ body {
     gap: 8px;
 }
 
-/* Add button styling here*/
-.btn, .clear {
+.btn {
     font-size: 12px;
     font-weight: bold;
     min-width: 80px;
@@ -41,6 +40,19 @@ body {
     color: #2B2B2B;
     border: none;
     outline: 1px solid #2B2B2B;
+}
+
+.clear {
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 80px;
+    height: auto;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #2B2B2B;
+    color: #F5F5F5;
+    border: none;
+    outline: 1px solid #F5F5F5;
 }
 
 .container {
