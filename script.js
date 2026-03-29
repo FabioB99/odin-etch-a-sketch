@@ -1,11 +1,8 @@
-console.log("Hello World");
-
-
 function createSquare(divNumber) {
     const container = document.querySelector(".container");
     const square = document.createElement("div");
     square.classList.add("square");
-    // square.textContent = divNumber;
+    square.textContent = divNumber;
     container.appendChild(square);
 }
 
@@ -41,8 +38,15 @@ function addHoverEffect() {
 }
 
 function defineNumberOfSquares() {
-    const numberOfSquares = prompt("Please enter the number of squares per side:");
-    return numberOfSquares;
+    let numberOfSquares;
+    let input = prompt("Please enter the number of squares per side:");
+
+    if (input > 100) {
+        alert("The max grid size is 100x100 tiles!");
+        return numberOfSquares = 100;
+    } else {
+        return numberOfSquares = input;
+    }
 }
 
 // Create first grid
