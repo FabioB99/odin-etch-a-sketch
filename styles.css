@@ -9,16 +9,29 @@ body {
     margin: 0;
     background-color: white;
     display: flex;
-    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.sketch-area {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 1600px;
+}
+
+.btn-container {
+    padding: 32px 32px 0px 32px;
+    flex: initial;
+    display: flex;
+    align-items: start;
 }
 
 .container {
     padding: 32px;
-    
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    max-width: 1600px;
 }
 
 .square {
