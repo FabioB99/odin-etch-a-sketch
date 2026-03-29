@@ -31,3 +31,7 @@ body {
     height: 80px;
     border-radius: 8px;
 }
+
+.hover-effect {
+    background-color: red;
+}

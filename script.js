@@ -1,7 +1,7 @@
 console.log("Hello World");
 
 function createSquare(divNumber) {
-    
+
     const container = document.querySelector(".container");
     const square = document.createElement("div");
     square.classList.add("square");
@@ -18,6 +18,16 @@ for (let i = 0; i < 256; i++) {
 
 // Hover effect
 const squares = document.querySelectorAll(".square");
+
 squares.forEach((square) => {
-    square.addEventListener("mouseover", (e) => console.log(e.target.textContent));
+    square.addEventListener("mouseover", (e) => {
+        // console.log(e.target.textContent);
+        e.target.classList.toggle("hover-effect");
+    });
+
+    square.addEventListener("mouseout", (e) => {
+        // console.log(e.target.textContent);
+        e.target.classList.toggle("hover-effect");
+    });
+
 });
