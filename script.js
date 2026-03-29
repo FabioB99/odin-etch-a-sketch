@@ -1,13 +1,15 @@
 console.log("Hello World");
 
-function createSquare() {
+function createSquare(divNumber) {
     
     const container = document.querySelector(".container");
     const square = document.createElement("div");
     square.classList.add("square");
+    square.textContent = divNumber;
     container.appendChild(square);
 }
 
 for (let i = 0; i < 256; i++) {
-    createSquare();
+    let counter = i + 1;
+    createSquare(counter);
 }
