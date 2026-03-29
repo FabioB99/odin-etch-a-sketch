@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    padding: 32px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    max-width: 1600px;
+}
+
+.square {
+    background-color: black;
+    width: 80px;
+    height: 80px;
+}
