@@ -1,20 +1,28 @@
 console.log("Hello World");
 
-function createSquare(divNumber) {
 
+function createSquare(divNumber) {
     const container = document.querySelector(".container");
     const square = document.createElement("div");
     square.classList.add("square");
-    //square.textContent = divNumber;
+    // square.textContent = divNumber;
     container.appendChild(square);
 }
 
-function createGrid(sideLength) {
-    let numberOfSquares = sideLength * sideLength;
-    for (let i = 0; i < numberOfSquares; i++) {
+function createGrid(numberOfSquares) {
+    
+    let gridDimensions = numberOfSquares * numberOfSquares;
+    for (let i = 0; i < gridDimensions; i++) {
         let counter = i + 1;
         createSquare(counter);
     }
+
+    // Define grid width
+    const squareSize = 40;
+    const gapSize = 1;
+    const horizontalPadding = 64;
+    const container = document.querySelector(".container");
+    container.style.width = `${numberOfSquares * squareSize + (numberOfSquares - 1) * gapSize + horizontalPadding}px`;
 }
 
 function addHoverEffect() {
@@ -22,7 +30,6 @@ function addHoverEffect() {
 
     squares.forEach((square) => {
         square.addEventListener("mouseover", (e) => {
-            // console.log(e.target.textContent);
             e.target.classList.add("hover-effect");
         });
 
@@ -33,12 +40,17 @@ function addHoverEffect() {
     });
 }
 
+function defineNumberOfSquares() {
+    const numberOfSquares = prompt("Please enter the number of squares per side:");
+    return numberOfSquares;
+}
+
 // Create first grid
 createGrid(16);
 addHoverEffect();
 
 
-// Generate new grid button
+// Grid button event handling
 const button = document.querySelector(".btn");
 button.addEventListener("click", (e) => {
 
@@ -50,8 +62,7 @@ button.addEventListener("click", (e) => {
         container.removeChild(container.firstChild);
     }
 
-    const numberOfSquares = prompt("Please enter the number of squares per side:");
-    createGrid(numberOfSquares);
+    createGrid(defineNumberOfSquares());
     addHoverEffect();
 
 })
