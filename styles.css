@@ -16,8 +16,9 @@ body {
 .sketch-area {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    max-width: 1600px;
+    align-items: start;
+    max-width: 960px;
+    width: 100%
 }
 
 .btn-container {
@@ -29,7 +30,7 @@ body {
 
 /* Add button styling here*/
 .btn {
-    font-size: 18px;
+    font-size: 12px;
     font-weight: bold;
     width: auto ;
     height: auto;
@@ -39,16 +40,14 @@ body {
     color: #2B2B2B;
     border: none;
     outline: 1px solid #2B2B2B;
-    
 }
-
-
 
 .container {
     padding: 32px;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+    width: 100%;
 }
 
 .square {
@@ -57,8 +56,8 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     border-radius: 8px;
 }
 

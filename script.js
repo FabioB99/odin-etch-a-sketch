@@ -31,3 +31,17 @@ squares.forEach((square) => {
     });
 
 });
+
+// Generate new grid button
+
+const button = document.querySelector(".btn");
+button.addEventListener("click", (e) => {
+    
+    const container = document.querySelector(".container");
+    console.log(container);
+
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+    
+})
