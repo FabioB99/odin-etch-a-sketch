@@ -26,13 +26,14 @@ body {
     flex: initial;
     display: flex;
     align-items: start;
+    gap: 8px;
 }
 
 /* Add button styling here*/
-.btn {
+.btn, .clear {
     font-size: 12px;
     font-weight: bold;
-    width: auto ;
+    min-width: 80px;
     height: auto;
     padding: 8px;
     border-radius: 4px;

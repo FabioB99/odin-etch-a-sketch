@@ -2,7 +2,7 @@ function createSquare(divNumber) {
     const container = document.querySelector(".container");
     const square = document.createElement("div");
     square.classList.add("square");
-    square.textContent = divNumber;
+    //square.textContent = divNumber;
     container.appendChild(square);
 }
 
