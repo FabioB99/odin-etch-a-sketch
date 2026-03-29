@@ -5,7 +5,7 @@ function createSquare(divNumber) {
     const container = document.querySelector(".container");
     const square = document.createElement("div");
     square.classList.add("square");
-    square.textContent = divNumber;
+    //square.textContent = divNumber;
     container.appendChild(square);
 }
 
@@ -23,13 +23,12 @@ function addHoverEffect() {
     squares.forEach((square) => {
         square.addEventListener("mouseover", (e) => {
             // console.log(e.target.textContent);
-            e.target.classList.toggle("hover-effect");
+            e.target.classList.add("hover-effect");
         });
 
-        square.addEventListener("mouseout", (e) => {
-            // console.log(e.target.textContent);
-            e.target.classList.toggle("hover-effect");
-        });
+        //square.addEventListener("mouseout", (e) => {
+        //    e.target.classList.toggle("hover-effect");
+        //});
 
     });
 }
