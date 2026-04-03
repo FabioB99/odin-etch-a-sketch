@@ -7,7 +7,7 @@ function createSquare(divNumber) {
 }
 
 function createGrid(numberOfSquares) {
-
+    
     let gridDimensions = numberOfSquares * numberOfSquares;
     for (let i = 0; i < gridDimensions; i++) {
         let counter = i + 1;
@@ -23,24 +23,22 @@ function createGrid(numberOfSquares) {
 }
 
 function addHoverEffect() {
-
-    function getRandomColor() {
-        let r = Math.floor(Math.random() * 256);
-        let g = Math.floor(Math.random() * 256);
-        let b = Math.floor(Math.random() * 256);
-
-        return `rgb(${r}, ${g}, ${b})`;
-    }
-
-    console.log(getRandomColor());
-
     const squares = document.querySelectorAll(".square");
 
     squares.forEach((square) => {
         square.addEventListener("mouseover", (e) => {
-            e.target.classList.add("hover-effect");
+            e.target.style.backgroundColor = getRandomColor();
+            //e.target.classList.add("hover-effect");
         });
     });
+}
+
+function getRandomColor() {
+    let r = Math.floor(Math.random() * 256); 
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
 function defineNumberOfSquares() {
