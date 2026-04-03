@@ -60,7 +60,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1px;
 }
 
 .square {
@@ -71,7 +70,6 @@ body {
     color: #2B2B2B;
     width: 40px;
     height: 40px;
-    border-radius: 2px;
 }
 
 .hover-effect {

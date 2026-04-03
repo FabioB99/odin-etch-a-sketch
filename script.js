@@ -16,7 +16,7 @@ function createGrid(numberOfSquares) {
 
     // Define grid width
     const squareSize = 40;
-    const gapSize = 1;
+    const gapSize = 0;
     const horizontalPadding = 64;
     const container = document.querySelector(".container");
     container.style.width = `${numberOfSquares * squareSize + (numberOfSquares - 1) * gapSize + horizontalPadding}px`;
