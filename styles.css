@@ -72,6 +72,6 @@ body {
     height: 40px;
 }
 
-.hover-effect {
-    background-color: red;
+.rainbow-mode-label {
+    color: white;
 }

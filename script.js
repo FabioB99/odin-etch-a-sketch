@@ -27,8 +27,14 @@ function addHoverEffect() {
 
     squares.forEach((square) => {
         square.addEventListener("mouseover", (e) => {
-            e.target.style.backgroundColor = getRandomColor();
-            //e.target.classList.add("hover-effect");
+
+            const checkbox = document.getElementById("rainbow-mode");
+
+            if (checkbox.checked == false) {
+                e.target.style.backgroundColor = "black";
+            } else {
+                e.target.style.backgroundColor = getRandomColor();
+            }
         });
     });
 }
@@ -78,6 +84,8 @@ button.addEventListener("click", (e) => {
 const clearButton = document.querySelector(".clear");
 clearButton.addEventListener("click", (e) => {
     const squares = document.querySelectorAll(".square");
-    squares.forEach((square) => square.classList.remove("hover-effect"));
+    squares.forEach((square) => {
+        square.style.backgroundColor = "white";
+    });
 })
 
