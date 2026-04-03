@@ -7,7 +7,7 @@ function createSquare(divNumber) {
 }
 
 function createGrid(numberOfSquares) {
-    
+
     let gridDimensions = numberOfSquares * numberOfSquares;
     for (let i = 0; i < gridDimensions; i++) {
         let counter = i + 1;
@@ -28,19 +28,25 @@ function addHoverEffect() {
     squares.forEach((square) => {
         square.addEventListener("mouseover", (e) => {
 
-            const checkbox = document.getElementById("rainbow-mode");
+            const rainbowModeCheckbox = document.getElementById("rainbow-mode");
+            const eraserCheckbox = document.getElementById("eraser-mode");
 
-            if (checkbox.checked == false) {
-                e.target.style.backgroundColor = "black";
+            if (eraserCheckbox.checked == true) {
+                e.target.style.backgroundColor = "white";
             } else {
-                e.target.style.backgroundColor = getRandomColor();
+                if (rainbowModeCheckbox.checked == false) {
+                    e.target.style.backgroundColor = "black";
+                } else {
+                    e.target.style.backgroundColor = getRandomColor();
+                }
             }
+
         });
     });
 }
 
 function getRandomColor() {
-    let r = Math.floor(Math.random() * 256); 
+    let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
 

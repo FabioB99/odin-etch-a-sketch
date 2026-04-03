@@ -72,6 +72,12 @@ body {
     height: 40px;
 }
 
-.rainbow-mode-label {
+.rainbow-mode-label, .eraser-mode-label {
     color: white;
+}
+
+.tool-container {
+    display: flex; 
+    flex-direction: row;
+    gap: 16px;
 }
