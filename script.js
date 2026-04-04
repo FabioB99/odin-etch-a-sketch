@@ -24,10 +24,12 @@ function createGrid(numberOfSquares) {
 
 function addHoverEffect() {
     const squares = document.querySelectorAll(".square");
-
     squares.forEach((square) => {
-        square.addEventListener("mouseover", (e) => {
+        let colorOpacity = 0.9;
+        let blackOpacity = 0.1;
 
+        square.addEventListener("mouseover", (e) => {
+ 
             const rainbowModeCheckbox = document.getElementById("rainbow-mode");
             const eraserCheckbox = document.getElementById("eraser-mode");
 
@@ -35,9 +37,13 @@ function addHoverEffect() {
                 e.target.style.backgroundColor = "white";
             } else {
                 if (rainbowModeCheckbox.checked == false) {
-                    e.target.style.backgroundColor = "black";
+                    console.log(blackOpacity);
+                    e.target.style.backgroundColor = `rgba(0, 0, 0 , ${blackOpacity})`;
+                    blackOpacity = parseFloat((blackOpacity + 0.1).toFixed(1));
                 } else {
-                    e.target.style.backgroundColor = getRandomColor();
+                    console.log(colorOpacity);
+                    e.target.style.backgroundColor = `rgba(${getRandomColor()}, ${colorOpacity})`;
+                    colorOpacity = parseFloat((colorOpacity - 0.1).toFixed(1));
                 }
             }
 
@@ -50,7 +56,7 @@ function getRandomColor() {
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
 
-    return `rgb(${r}, ${g}, ${b})`;
+    return `${r}, ${g}, ${b}`;
 }
 
 function defineNumberOfSquares() {
