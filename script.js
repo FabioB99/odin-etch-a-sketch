@@ -32,6 +32,7 @@ function addHoverEffect() {
  
             const rainbowModeCheckbox = document.getElementById("rainbow-mode");
             const eraserCheckbox = document.getElementById("eraser-mode");
+            const darkeningModeCheckbox = document.getElementById("darkening-mode");
 
             if (eraserCheckbox.checked == true) {
                 e.target.style.backgroundColor = "white";
@@ -39,11 +40,11 @@ function addHoverEffect() {
                 if (rainbowModeCheckbox.checked == false) {
                     console.log(blackOpacity);
                     e.target.style.backgroundColor = `rgba(0, 0, 0 , ${blackOpacity})`;
-                    blackOpacity = parseFloat((blackOpacity + 0.1).toFixed(1));
+                    if (darkeningModeCheckbox.checked == true) {blackOpacity = parseFloat((blackOpacity + 0.1).toFixed(1))};
                 } else {
                     console.log(colorOpacity);
                     e.target.style.backgroundColor = `rgba(${getRandomColor()}, ${colorOpacity})`;
-                    colorOpacity = parseFloat((colorOpacity - 0.1).toFixed(1));
+                    if (darkeningModeCheckbox.checked == true) {colorOpacity = parseFloat((colorOpacity - 0.1).toFixed(1));};
                 }
             }
 

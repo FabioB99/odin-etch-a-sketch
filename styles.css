@@ -72,7 +72,7 @@ body {
     height: 40px;
 }
 
-.rainbow-mode-label, .eraser-mode-label {
+.rainbow-mode-label, .eraser-mode-label, .darkening-mode-label {
     color: white;
 }
 
